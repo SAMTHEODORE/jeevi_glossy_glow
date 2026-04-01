@@ -56,8 +56,13 @@
     }
   }
 
+  /* Typography - Jost Font */
+  body, button, input, select, textarea, p, h1, h2, h3, h4, h5, h6, a, span, div {
+    font-family: 'Jost', sans-serif;
+  }
+
   /* 3D Effects & Transitions */
-  .card-3d, .service-item, .ig-card, .booking-card, .glam-3d-card {
+  .service-item, .glam-3d-card {
     transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
     transform-style: preserve-3d;
   }
@@ -161,7 +166,7 @@
     }
   }
 
-  /* Navigation - Purple Theme */
+  /* Navigation */
   nav {
     display: flex;
     justify-content: center;
@@ -224,7 +229,7 @@
     box-shadow: 0 8px 18px rgba(155,77,150,0.3);
   }
 
-  /* Hero Section - Light Pink Background */
+  /* Hero Section */
   .hero {
     display: flex;
     flex-wrap: wrap;
@@ -236,7 +241,6 @@
     margin: 2rem 0;
     border-radius: 55px;
     box-shadow: inset 0 1px 3px rgba(255,255,255,0.8), var(--shadow);
-    transform: perspective(1000px) translateZ(0);
   }
 
   @media (max-width: 768px) {
@@ -298,7 +302,7 @@
     }
   }
 
-  /* 3D Professional Makeup Image Card with Logo Integration */
+  /* 3D Makeup Artist Image Card */
   .makeup-showcase {
     flex: 1;
     min-width: 280px;
@@ -334,19 +338,13 @@
     box-shadow: 0 35px 50px -18px rgba(107,62,106,0.35);
   }
 
-  .glam-3d-card .logo-image {
+  .makeup-artist-image {
     width: 100%;
     max-width: 320px;
     border-radius: 28px;
     object-fit: cover;
     aspect-ratio: 1/1;
     box-shadow: 0 12px 20px rgba(0,0,0,0.15);
-    background: linear-gradient(135deg, #f9e6f0, #ffeef4);
-  }
-
-  .glam-logo-wrapper {
-    position: relative;
-    display: inline-block;
   }
 
   .signature-badge {
@@ -415,7 +413,6 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1.8rem;
-    perspective: 800px;
   }
 
   @media (max-width: 768px) {
@@ -541,7 +538,6 @@
     padding: 2rem;
     margin: 2.5rem 0;
     box-shadow: 0 20px 40px -15px rgba(107,62,106,0.15);
-    transform: translateZ(10px);
   }
 
   .form-row {
@@ -572,7 +568,7 @@
   input, select, textarea {
     font-family: 'Jost', sans-serif;
     padding: 14px 18px;
-    border-radius: 50px;
+    border-radius: 20px;
     border: 1.5px solid #eed5e6;
     font-size: 1rem;
     background: #fefafd;
@@ -604,7 +600,7 @@
     box-shadow: 0 15px 25px -8px var(--primary);
   }
 
-  /* Contact Section - Purple Gradient */
+  /* Contact Section */
   .contact-pro {
     background: linear-gradient(135deg, #6b3e6a, #9b4d96);
     color: white;
@@ -697,7 +693,6 @@
     color: var(--secondary);
     text-decoration: none;
     font-weight: 600;
-    transition: color 0.3s;
   }
 
   .copyright a:hover {
@@ -730,7 +725,7 @@
 </nav>
 
 <div class="container">
-    <!-- Hero Section with Logo in 3D Glamour Card -->
+    <!-- Hero Section with Makeup Artist Image -->
     <div class="hero">
         <div class="hero-text">
             <h2>Where Artistry Meets <span class="highlight">Radiance</span></h2>
@@ -743,8 +738,7 @@
         </div>
         <div class="makeup-showcase">
             <div class="glam-3d-card">
-                <!-- Logo Image displayed in the 3D Glamour Look section -->
-                <img src="IMG_3325.PNG" alt="Jeevi Glossy Glow Signature Logo" class="logo-image" onerror="this.src='https://placehold.co/400x400/9b4d96/ffffff?text=Jeevi+Glossy+Glow'; this.onerror=null;">
+                <img src="IMG_3326.jpeg" alt="Jeevi Glossy Glow - Professional Makeup Artist" class="makeup-artist-image" onerror="this.src='https://placehold.co/400x400/9b4d96/ffffff?text=Jeevi+Makeup+Artist'; this.onerror=null;">
                 <div class="signature-badge">
                     <i class="fas fa-magic"></i> Signature 3D Glamour Look
                 </div>
@@ -801,14 +795,14 @@
             <h2 class="section-title">Book Your Glam Session</h2>
             <form onsubmit="sendWhatsAppBooking(); return false;">
                 <div class="form-row">
-                    <div class="input-group"><label>Full Name *</label><input type="text" id="name" required></div>
-                    <div class="input-group"><label>Phone Number *</label><input type="tel" id="phone" required></div>
+                    <div class="input-group"><label>Full Name *</label><input type="text" id="name" placeholder="Enter your full name" required></div>
+                    <div class="input-group"><label>Phone Number *</label><input type="tel" id="phone" placeholder="Enter your mobile number" required></div>
                 </div>
                 <div class="form-row">
                     <div class="input-group"><label>Preferred Date *</label><input type="date" id="date" required></div>
                     <div class="input-group"><label>Select Service *</label>
                         <select id="service" required>
-                            <option value="">Choose Service</option>
+                            <option value="">Choose a service</option>
                             <option>Airbrush Bridal Makeup</option>
                             <option>Classic Bridal Makeup</option>
                             <option>Mehendi Art</option>
@@ -820,7 +814,7 @@
                     </div>
                 </div>
                 <div class="form-row">
-                    <div class="input-group"><label>Additional Details</label><textarea rows="3" id="message" placeholder="Location, time preference..."></textarea></div>
+                    <div class="input-group"><label>Additional Details</label><textarea rows="3" id="message" placeholder="Location, time preference, special requests..."></textarea></div>
                 </div>
                 <div style="text-align: center;">
                     <button type="submit" class="btn-book"><i class="fab fa-whatsapp"></i> Confirm via WhatsApp</button>
@@ -860,6 +854,7 @@
 
 <script async src="//www.instagram.com/embed.js"></script>
 <script>
+    // Clean & Professional WhatsApp Message
     function sendWhatsAppBooking() {
         let name = document.getElementById("name").value.trim();
         let phone = document.getElementById("phone").value.trim();
@@ -867,14 +862,35 @@
         let service = document.getElementById("service").value;
         let extraMsg = document.getElementById("message").value.trim();
 
-        if (!name) { alert("💄 Please enter your full name."); return false; }
-        if (!phone) { alert("📱 Please enter your phone number."); return false; }
-        if (!date) { alert("📅 Please select your preferred date."); return false; }
-        if (!service) { alert("✨ Please select a service."); return false; }
+        if (!name) { alert("Please enter your full name."); return false; }
+        if (!phone) { alert("Please enter your phone number."); return false; }
+        if (!date) { alert("Please select your preferred date."); return false; }
+        if (!service) { alert("Please select a service."); return false; }
 
-        let message = `🌟 *JEEVI GLOSSY GLOW - Booking* 🌟%0A%0A👤 Name: ${name}%0A📞 Contact: ${phone}%0A💄 Service: ${service}%0A📅 Date: ${date}%0A📝 Details: ${extraMsg || "—"}%0A%0A✨ Looking forward to creating your dream look! ✨`;
+        const formattedDate = new Date(date).toLocaleDateString('en-IN', {
+            day: 'numeric',
+            month: 'long',
+            year: 'numeric'
+        });
 
-        window.open(`https://wa.me/917904965572?text=${message}`, "_blank");
+        // Clean professional message
+        let message = `Hello Jeevi Glossy Glow,\n\n`;
+        message += `I would like to book an appointment.\n\n`;
+        message += `Name: ${name}\n`;
+        message += `Phone: ${phone}\n`;
+        message += `Service: ${service}\n`;
+        message += `Date: ${formattedDate}\n`;
+        
+        if (extraMsg) {
+            message += `\nAdditional Details: \n ${extraMsg}\n`;
+        }
+        
+        message += `\nThank you!`;
+
+        const encodedMessage = encodeURIComponent(message);
+        const whatsappUrl = `https://wa.me/917904965572?text=${encodedMessage}`;
+        
+        window.open(whatsappUrl, "_blank");
         return true;
     }
 
@@ -883,7 +899,6 @@
         dateInput.min = new Date().toISOString().split('T')[0];
     }
 
-    // Smooth scroll
     document.querySelectorAll('nav a, .hero-text a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             let targetId = this.getAttribute('href');
@@ -897,7 +912,6 @@
         });
     });
 
-    // 3D tilt effect for glam card
     const glamCard = document.querySelector('.glam-3d-card');
     if(glamCard) {
         document.body.addEventListener('mousemove', function(e) {
@@ -912,13 +926,19 @@
         });
     }
 
-    // Handle logo image error
-    const logoImages = document.querySelectorAll('.logo-image, .logo-img');
-    logoImages.forEach(img => {
-        img.addEventListener('error', function() {
-            this.src = 'https://placehold.co/400x400/9b4d96/ffffff?text=Jeevi+Glossy+Glow';
+    const makeupImage = document.querySelector('.makeup-artist-image');
+    if(makeupImage) {
+        makeupImage.addEventListener('error', function() {
+            this.src = 'https://placehold.co/400x400/9b4d96/ffffff?text=Jeevi+Makeup+Artist';
         });
-    });
+    }
+    
+    const logoImg = document.querySelector('.logo-img');
+    if(logoImg) {
+        logoImg.addEventListener('error', function() {
+            this.src = 'https://placehold.co/70x70/ffb7c5/9b4d96?text=JGG';
+        });
+    }
 </script>
 </body>
 </html>
