@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, viewport-fit=cover">
+<title>Jeevi Glossy Glow | Professional Makeup Artist</title>
+<!-- Google Fonts: Jost -->
+<link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<!-- Font Awesome 6 -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Jost', sans-serif;
+    background: linear-gradient(135deg, #faf5ff 0%, #fdf2f8 100%);
+    color: #2d1b2e;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
+
+  /* Professional Color Palette: Purple + Light Pink */
+  :root {
+    --primary: #9b4d96;
+    --primary-dark: #6b3e6a;
+    --primary-light: #c77dbf;
+    --secondary: #ffb7c5;
+    --accent: #f5a3c7;
+    --pink-light: #ffe4f0;
+    --purple-soft: #f3e8ff;
+    --dark-text: #2d1b2e;
+    --white: #ffffff;
+    --shadow: 0 20px 35px -12px rgba(107, 62, 106, 0.2);
+  }
+
+  /* Responsive Container */
+  .container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  @media (max-width: 768px) {
+    .container {
+      padding: 0 16px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .container {
+      padding: 0 12px;
+    }
+  }
+
+  /* 3D Effects & Transitions */
+  .card-3d, .service-item, .ig-card, .booking-card, .glam-3d-card {
+    transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+    transform-style: preserve-3d;
+  }
+
+  /* Header with Logo - Purple Gradient */
+  header {
+    background: linear-gradient(135deg, #4a2b4a 0%, #7a4d7a 50%, #4a2b4a 100%);
+    color: #fff5fc;
+    padding: 1.5rem 2rem;
+    text-align: center;
+    position: relative;
+    box-shadow: var(--shadow);
+    border-bottom-left-radius: 45px;
+    border-bottom-right-radius: 45px;
+  }
+
+  @media (max-width: 768px) {
+    header {
+      padding: 1.2rem 1rem;
+      border-bottom-left-radius: 30px;
+      border-bottom-right-radius: 30px;
+    }
+  }
+
+  .logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+  }
+
+  @media (max-width: 480px) {
+    .logo-container {
+      gap: 12px;
+    }
+  }
+
+  .logo-img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--secondary);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    transition: transform 0.3s;
+  }
+
+  @media (max-width: 768px) {
+    .logo-img {
+      width: 60px;
+      height: 60px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .logo-img {
+      width: 50px;
+      height: 50px;
+    }
+  }
+
+  .logo-img:hover {
+    transform: scale(1.05) rotate(3deg);
+  }
+
+  header h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+    background: linear-gradient(135deg, #ffd9f0, #ffb7d5);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  @media (max-width: 768px) {
+    header h1 {
+      font-size: 2rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    header h1 {
+      font-size: 1.6rem;
+    }
+  }
+
+  header p {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #ffe4f0;
+    margin-top: 8px;
+    letter-spacing: 1px;
+  }
+
+  @media (max-width: 768px) {
+    header p {
+      font-size: 1rem;
+    }
+  }
+
+  /* Navigation - Purple Theme */
+  nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    background: white;
+    padding: 0.8rem 1.5rem;
+    margin: 1.5rem auto;
+    width: fit-content;
+    max-width: 90%;
+    border-radius: 60px;
+    box-shadow: 0 12px 25px -10px rgba(107,62,106,0.15);
+    transform: translateZ(10px);
+  }
+
+  @media (max-width: 768px) {
+    nav {
+      gap: 0.5rem;
+      padding: 0.6rem 1rem;
+      margin: 1rem auto;
+    }
+  }
+
+  @media (max-width: 480px) {
+    nav {
+      gap: 0.3rem;
+      padding: 0.5rem 0.8rem;
+    }
+  }
+
+  nav a {
+    color: #4a2b4a;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.5rem 1.2rem;
+    border-radius: 40px;
+    transition: all 0.3s;
+    font-size: 1rem;
+    white-space: nowrap;
+  }
+
+  @media (max-width: 768px) {
+    nav a {
+      padding: 0.4rem 0.8rem;
+      font-size: 0.85rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    nav a {
+      padding: 0.3rem 0.6rem;
+      font-size: 0.75rem;
+    }
+  }
+
+  nav a:hover {
+    background: var(--primary);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(155,77,150,0.3);
+  }
+
+  /* Hero Section - Light Pink Background */
+  .hero {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding: 3rem 2rem;
+    background: var(--pink-light);
+    margin: 2rem 0;
+    border-radius: 55px;
+    box-shadow: inset 0 1px 3px rgba(255,255,255,0.8), var(--shadow);
+    transform: perspective(1000px) translateZ(0);
+  }
+
+  @media (max-width: 768px) {
+    .hero {
+      padding: 2rem 1.5rem;
+      gap: 1.5rem;
+      margin: 1.5rem 0;
+      border-radius: 40px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero {
+      padding: 1.5rem 1rem;
+      gap: 1.2rem;
+      border-radius: 30px;
+    }
+  }
+
+  .hero-text {
+    flex: 1;
+    min-width: 260px;
+  }
+
+  .hero-text h2 {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--primary-dark);
+    line-height: 1.2;
+  }
+
+  @media (max-width: 768px) {
+    .hero-text h2 {
+      font-size: 2.2rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero-text h2 {
+      font-size: 1.8rem;
+    }
+  }
+
+  .hero-text .highlight {
+    color: var(--primary);
+    border-bottom: 3px solid var(--primary-light);
+    display: inline-block;
+  }
+
+  .hero-text p {
+    font-size: 1.2rem;
+    margin: 1rem 0;
+    color: #5a3a5a;
+  }
+
+  @media (max-width: 768px) {
+    .hero-text p {
+      font-size: 1rem;
+    }
+  }
+
+  /* 3D Professional Makeup Image Card with Logo Integration */
+  .makeup-showcase {
+    flex: 1;
+    min-width: 280px;
+    perspective: 800px;
+  }
+
+  @media (max-width: 768px) {
+    .makeup-showcase {
+      min-width: 240px;
+    }
+  }
+
+  .glam-3d-card {
+    background: white;
+    border-radius: 35px;
+    padding: 1.2rem;
+    box-shadow: 0 25px 40px -15px rgba(107,62,106,0.25);
+    transform: rotateY(4deg) rotateX(2deg) translateZ(20px);
+    transition: all 0.5s ease;
+    text-align: center;
+    border: 1px solid rgba(155,77,150,0.2);
+  }
+
+  @media (max-width: 768px) {
+    .glam-3d-card {
+      padding: 0.8rem;
+      border-radius: 28px;
+    }
+  }
+
+  .glam-3d-card:hover {
+    transform: rotateY(0deg) rotateX(0deg) translateZ(35px);
+    box-shadow: 0 35px 50px -18px rgba(107,62,106,0.35);
+  }
+
+  .glam-3d-card .logo-image {
+    width: 100%;
+    max-width: 320px;
+    border-radius: 28px;
+    object-fit: cover;
+    aspect-ratio: 1/1;
+    box-shadow: 0 12px 20px rgba(0,0,0,0.15);
+    background: linear-gradient(135deg, #f9e6f0, #ffeef4);
+  }
+
+  .glam-logo-wrapper {
+    position: relative;
+    display: inline-block;
+  }
+
+  .signature-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 15px;
+    padding: 8px 16px;
+    background: linear-gradient(135deg, var(--primary-light), var(--primary));
+    border-radius: 40px;
+    color: white;
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+
+  /* Services Section */
+  .services-section {
+    background: white;
+    border-radius: 55px;
+    padding: 2rem 1.5rem;
+    margin: 2.5rem 0;
+    box-shadow: 0 15px 30px -12px rgba(107,62,106,0.1);
+  }
+
+  @media (max-width: 768px) {
+    .services-section {
+      padding: 1.5rem 1rem;
+      margin: 1.5rem 0;
+      border-radius: 40px;
+    }
+  }
+
+  .section-title {
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--primary-dark);
+    margin-bottom: 2rem;
+    position: relative;
+  }
+
+  @media (max-width: 768px) {
+    .section-title {
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .section-title {
+      font-size: 1.5rem;
+    }
+  }
+
+  .section-title:after {
+    content: '';
+    display: block;
+    width: 70px;
+    height: 3px;
+    background: var(--primary-light);
+    margin: 12px auto 0;
+    border-radius: 3px;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.8rem;
+    perspective: 800px;
+  }
+
+  @media (max-width: 768px) {
+    .services-grid {
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 1rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .services-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.8rem;
+    }
+  }
+
+  .service-item {
+    background: var(--purple-soft);
+    padding: 1.5rem 0.8rem;
+    border-radius: 28px;
+    text-align: center;
+    transition: all 0.3s;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    border: 1px solid rgba(155,77,150,0.15);
+    transform: translateZ(10px);
+  }
+
+  .service-item:hover {
+    transform: translateY(-8px) translateZ(15px);
+    box-shadow: 0 20px 30px -12px rgba(107,62,106,0.2);
+    background: white;
+  }
+
+  .service-item i {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 12px;
+  }
+
+  .service-item h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin: 8px 0;
+    color: var(--dark-text);
+  }
+
+  .service-item p {
+    font-size: 0.85rem;
+    color: #7a5a7a;
+  }
+
+  /* Instagram Feed */
+  .instagram-live {
+    background: linear-gradient(145deg, #fdf2f8, #fae9f5);
+    border-radius: 55px;
+    padding: 2rem 1.5rem;
+    margin: 2.5rem 0;
+    box-shadow: 0 15px 35px -12px rgba(107,62,106,0.1);
+  }
+
+  .insta-profile-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+    padding: 12px 28px;
+    border-radius: 60px;
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: transform 0.3s;
+  }
+
+  .insta-profile-link:hover {
+    transform: scale(1.02) translateY(-3px);
+  }
+
+  .instagram-media-wrapper {
+    background: white;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 20px 30px -12px rgba(0,0,0,0.2);
+    max-width: 540px;
+    margin: 0 auto;
+  }
+
+  .gallery-preview {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  @media (max-width: 768px) {
+    .gallery-preview {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.8rem;
+    }
+  }
+
+  .gallery-item {
+    background: linear-gradient(135deg, #e9d5ff, #f5d0e8);
+    border-radius: 20px;
+    padding: 12px;
+    text-align: center;
+    font-weight: 500;
+    color: var(--primary-dark);
+    transition: all 0.3s;
+    cursor: pointer;
+  }
+
+  .gallery-item:hover {
+    transform: translateY(-3px);
+    background: var(--primary-light);
+    color: white;
+  }
+
+  /* Booking Form */
+  .booking-premium {
+    background: white;
+    border-radius: 55px;
+    padding: 2rem;
+    margin: 2.5rem 0;
+    box-shadow: 0 20px 40px -15px rgba(107,62,106,0.15);
+    transform: translateZ(10px);
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  @media (max-width: 768px) {
+    .form-row {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+  }
+
+  .input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .input-group label {
+    font-weight: 600;
+    color: var(--primary-dark);
+  }
+
+  input, select, textarea {
+    font-family: 'Jost', sans-serif;
+    padding: 14px 18px;
+    border-radius: 50px;
+    border: 1.5px solid #eed5e6;
+    font-size: 1rem;
+    background: #fefafd;
+    transition: all 0.2s;
+  }
+
+  input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(155,77,150,0.2);
+  }
+
+  .btn-book {
+    background: linear-gradient(95deg, var(--primary), var(--primary-dark));
+    color: white;
+    padding: 14px 32px;
+    border: none;
+    border-radius: 60px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .btn-book:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 25px -8px var(--primary);
+  }
+
+  /* Contact Section - Purple Gradient */
+  .contact-pro {
+    background: linear-gradient(135deg, #6b3e6a, #9b4d96);
+    color: white;
+    border-radius: 55px;
+    padding: 2.5rem;
+    margin: 2rem 0;
+    text-align: center;
+  }
+
+  .contact-details {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin: 1.5rem 0;
+  }
+
+  @media (max-width: 768px) {
+    .contact-details {
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+  }
+
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1rem;
+  }
+
+  .contact-item i {
+    font-size: 1.5rem;
+    color: var(--secondary);
+  }
+
+  .btn-group-pro {
+    display: flex;
+    gap: 1.2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 1.8rem;
+  }
+
+  .btn-call, .btn-wa {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 28px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s;
+  }
+
+  .btn-call {
+    background: white;
+    color: var(--primary-dark);
+  }
+
+  .btn-wa {
+    background: #25D366;
+    color: white;
+  }
+
+  .btn-call:hover, .btn-wa:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  }
+
+  /* Footer */
+  footer {
+    background: linear-gradient(135deg, #2d1b2e, #1f1220);
+    color: #f5e0f0;
+    padding: 2rem;
+    border-radius: 45px 45px 0 0;
+    text-align: center;
+    margin-top: 2rem;
+  }
+
+  .copyright {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255,183,197,0.3);
+    font-size: 0.9rem;
+  }
+
+  .copyright a {
+    color: var(--secondary);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+  }
+
+  .copyright a:hover {
+    color: white;
+    text-decoration: underline;
+  }
+
+  @media (max-width: 768px) {
+    .copyright {
+      font-size: 0.8rem;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header>
+    <div class="logo-container">
+        <img src="IMG_3325.PNG" alt="Jeevi Glossy Glow Logo" class="logo-img" onerror="this.src='https://placehold.co/70x70/ffb7c5/9b4d96?text=JGG'; this.onerror=null;">
+        <h1>Jeevi Glossy Glow 💄</h1>
+    </div>
+    <p>Professional Makeup Artist | Bridal & Editorial Specialist</p>
+</header>
+
+<nav>
+    <a href="#services"><i class="fas fa-brush"></i> Services</a>
+    <a href="#instagram-feed"><i class="fab fa-instagram"></i> Portfolio</a>
+    <a href="#booking"><i class="fas fa-calendar-alt"></i> Book</a>
+    <a href="#contact"><i class="fas fa-phone-alt"></i> Contact</a>
+</nav>
+
+<div class="container">
+    <!-- Hero Section with Logo in 3D Glamour Card -->
+    <div class="hero">
+        <div class="hero-text">
+            <h2>Where Artistry Meets <span class="highlight">Radiance</span></h2>
+            <p><i class="fas fa-certificate" style="color: var(--primary);"></i> Certified Professional Makeup Artist | 8+ Years Experience</p>
+            <p>Bridal • Airbrush • HD Makeup • Saree Draping • Hair Styling</p>
+            <div style="display: flex; gap: 15px; margin-top: 25px; flex-wrap: wrap;">
+                <a href="#booking" style="background: var(--primary); color: white; padding: 12px 28px; border-radius: 40px; text-decoration: none; font-weight: 600;">Book Consultation →</a>
+                <a href="https://wa.me/917904965572" style="border: 2px solid var(--primary); color: var(--primary); padding: 12px 28px; border-radius: 40px; text-decoration: none; font-weight: 600;">WhatsApp Inquiry</a>
+            </div>
+        </div>
+        <div class="makeup-showcase">
+            <div class="glam-3d-card">
+                <!-- Logo Image displayed in the 3D Glamour Look section -->
+                <img src="IMG_3325.PNG" alt="Jeevi Glossy Glow Signature Logo" class="logo-image" onerror="this.src='https://placehold.co/400x400/9b4d96/ffffff?text=Jeevi+Glossy+Glow'; this.onerror=null;">
+                <div class="signature-badge">
+                    <i class="fas fa-magic"></i> Signature 3D Glamour Look
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="services-section">
+            <h2 class="section-title">Premium Services</h2>
+            <div class="services-grid">
+                <div class="service-item"><i class="fas fa-lipstick"></i><h3>Airbrush Makeup</h3><p>Flawless HD finish</p></div>
+                <div class="service-item"><i class="fas fa-ring"></i><h3>Bridal Makeup</h3><p>Custom trial included</p></div>
+                <div class="service-item"><i class="fas fa-hand-peace"></i><h3>Mehendi Art</h3><p>Arabic & Traditional</p></div>
+                <div class="service-item"><i class="fas fa-cut"></i><h3>Hair Styling</h3><p>Updos, curls, blowdry</p></div>
+                <div class="service-item"><i class="fas fa-female"></i><h3>Saree Draping</h3><p>Nivi, dhoti, lehenga</p></div>
+                <div class="service-item"><i class="fas fa-gem"></i><h3>Editorial Makeup</h3><p>Photoshoot & Events</p></div>
+                <div class="service-item"><i class="fas fa-smile"></i><h3>Party Glam</h3><p>Evening & Reception</p></div>
+                <div class="service-item"><i class="fas fa-heart"></i><h3>Pre-Wedding</h3><p>Haldi, mehendi looks</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instagram Feed -->
+    <section id="instagram-feed">
+        <div class="instagram-live">
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <a href="https://instagram.com/jeevi_glossy_glow" target="_blank" class="insta-profile-link">
+                    <i class="fab fa-instagram fa-lg"></i> @jeevi_glossy_glow
+                </a>
+                <p style="margin-top: 15px; color: #5a3a5a;">✨ Real transformations • 500+ Happy Brides ✨</p>
+            </div>
+            <div style="display: flex; justify-content: center; margin: 1.5rem 0;">
+                <div class="instagram-media-wrapper">
+                    <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/jeevi_glossy_glow/?utm_source=ig_embed" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:24px; margin:0 auto; padding:0; width:99.375%;"></blockquote>
+                </div>
+            </div>
+            <div class="gallery-preview">
+                <div class="gallery-item"><i class="fas fa-camera"></i> Bridal Glow</div>
+                <div class="gallery-item"><i class="fas fa-camera"></i> Mehendi Art</div>
+                <div class="gallery-item"><i class="fas fa-camera"></i> Hair Masterpiece</div>
+                <div class="gallery-item"><i class="fas fa-camera"></i> Saree Draping</div>
+            </div>
+            <div style="text-align: center; margin-top: 25px;">
+                <a href="https://instagram.com/jeevi_glossy_glow" target="_blank" style="color: var(--primary); font-weight: 700;">📸 View All Posts on Instagram →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Form -->
+    <section id="booking">
+        <div class="booking-premium">
+            <h2 class="section-title">Book Your Glam Session</h2>
+            <form onsubmit="sendWhatsAppBooking(); return false;">
+                <div class="form-row">
+                    <div class="input-group"><label>Full Name *</label><input type="text" id="name" required></div>
+                    <div class="input-group"><label>Phone Number *</label><input type="tel" id="phone" required></div>
+                </div>
+                <div class="form-row">
+                    <div class="input-group"><label>Preferred Date *</label><input type="date" id="date" required></div>
+                    <div class="input-group"><label>Select Service *</label>
+                        <select id="service" required>
+                            <option value="">Choose Service</option>
+                            <option>Airbrush Bridal Makeup</option>
+                            <option>Classic Bridal Makeup</option>
+                            <option>Mehendi Art</option>
+                            <option>Hair Styling</option>
+                            <option>Saree Draping</option>
+                            <option>Party Makeup</option>
+                            <option>Full Bridal Package</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="input-group"><label>Additional Details</label><textarea rows="3" id="message" placeholder="Location, time preference..."></textarea></div>
+                </div>
+                <div style="text-align: center;">
+                    <button type="submit" class="btn-book"><i class="fab fa-whatsapp"></i> Confirm via WhatsApp</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="contact-pro">
+            <h2 style="font-size: 2rem; margin-bottom: 1rem;">Let's Create Magic Together</h2>
+            <div class="contact-details">
+                <div class="contact-item"><i class="fas fa-map-marker-alt"></i> Devakottai, Tamil Nadu</div>
+                <div class="contact-item"><i class="fas fa-phone-alt"></i> +91 7904965572</div>
+                <div class="contact-item"><i class="fab fa-instagram"></i> @jeevi_glossy_glow</div>
+            </div>
+            <div class="btn-group-pro">
+                <a href="tel:7904965572" class="btn-call"><i class="fas fa-phone"></i> Call Now</a>
+                <a href="https://wa.me/917904965572" class="btn-wa"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                <a href="https://instagram.com/jeevi_glossy_glow" target="_blank" class="btn-call" style="background: #833ab4; color: white; border: none;"><i class="fab fa-instagram"></i> DM on IG</a>
+            </div>
+            <p style="margin-top: 25px;">📍 In-house studio & on-location service available</p>
+        </div>
+    </section>
+</div>
+
+<footer>
+    <div class="footer-content">
+        <p><i class="fas fa-heart" style="color: var(--secondary);"></i> Jeevi Glossy Glow — Crafting Elegance, One Look at a Time</p>
+        <div class="copyright">
+            <p>© 2026 Jeevi Glossy Glow | All Rights Reserved</p>
+            <p>Designed & Developed by <a href="https://samtheodore.github.io/Sam-Portfolio/" target="_blank">TheoTech</a> <i class="fas fa-code"></i></p>
+        </div>
+    </div>
+</footer>
+
+<script async src="//www.instagram.com/embed.js"></script>
+<script>
+    function sendWhatsAppBooking() {
+        let name = document.getElementById("name").value.trim();
+        let phone = document.getElementById("phone").value.trim();
+        let date = document.getElementById("date").value;
+        let service = document.getElementById("service").value;
+        let extraMsg = document.getElementById("message").value.trim();
+
+        if (!name) { alert("💄 Please enter your full name."); return false; }
+        if (!phone) { alert("📱 Please enter your phone number."); return false; }
+        if (!date) { alert("📅 Please select your preferred date."); return false; }
+        if (!service) { alert("✨ Please select a service."); return false; }
+
+        let message = `🌟 *JEEVI GLOSSY GLOW - Booking* 🌟%0A%0A👤 Name: ${name}%0A📞 Contact: ${phone}%0A💄 Service: ${service}%0A📅 Date: ${date}%0A📝 Details: ${extraMsg || "—"}%0A%0A✨ Looking forward to creating your dream look! ✨`;
+
+        window.open(`https://wa.me/917904965572?text=${message}`, "_blank");
+        return true;
+    }
+
+    const dateInput = document.getElementById('date');
+    if(dateInput) {
+        dateInput.min = new Date().toISOString().split('T')[0];
+    }
+
+    // Smooth scroll
+    document.querySelectorAll('nav a, .hero-text a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            let targetId = this.getAttribute('href');
+            if(targetId && targetId.startsWith('#')) {
+                let target = document.querySelector(targetId);
+                if(target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            }
+        });
+    });
+
+    // 3D tilt effect for glam card
+    const glamCard = document.querySelector('.glam-3d-card');
+    if(glamCard) {
+        document.body.addEventListener('mousemove', function(e) {
+            if(window.innerWidth > 768) {
+                let x = (window.innerWidth / 2 - e.pageX) / 50;
+                let y = (window.innerHeight / 2 - e.pageY) / 50;
+                glamCard.style.transform = `rotateY(${x * 0.6}deg) rotateX(${y * -0.4}deg) translateZ(25px)`;
+            }
+        });
+        document.body.addEventListener('mouseleave', () => {
+            glamCard.style.transform = 'rotateY(4deg) rotateX(2deg) translateZ(20px)';
+        });
+    }
+
+    // Handle logo image error
+    const logoImages = document.querySelectorAll('.logo-image, .logo-img');
+    logoImages.forEach(img => {
+        img.addEventListener('error', function() {
+            this.src = 'https://placehold.co/400x400/9b4d96/ffffff?text=Jeevi+Glossy+Glow';
+        });
+    });
+</script>
+</body>
+</html>
