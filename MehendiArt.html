@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, viewport-fit=cover">
+<title>Mehendi Art Gallery | Jeevi Glossy Glow</title>
+<!-- Google Fonts: Jost -->
+<link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<!-- Font Awesome 6 -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Jost', sans-serif;
+    background: linear-gradient(135deg, #fef7e8 0%, #fff4e0 100%);
+    color: #4a2a1e;
+    overflow-x: hidden;
+  }
+
+  /* Professional Color Palette: Earthy Greens + Gold + Rustic */
+  :root {
+    --primary: #8b6b4d;
+    --primary-dark: #5e3e2a;
+    --primary-light: #c29a6b;
+    --accent: #b8865b;
+    --gold: #d4af37;
+    --mehendi-green: #6f4e2e;
+    --cream: #fff8f0;
+    --soft-beige: #fdf5e6;
+    --dark-text: #3a2a1e;
+    --white: #ffffff;
+    --shadow: 0 20px 35px -12px rgba(94, 62, 42, 0.2);
+  }
+
+  /* Header */
+  header {
+    background: linear-gradient(135deg, #5e3e2a 0%, #8b6b4d 50%, #5e3e2a 100%);
+    color: #fff5e8;
+    padding: 1.5rem 2rem;
+    text-align: center;
+    position: relative;
+    box-shadow: var(--shadow);
+    border-bottom-left-radius: 45px;
+    border-bottom-right-radius: 45px;
+  }
+
+  @media (max-width: 768px) {
+    header {
+      padding: 1.2rem 1rem;
+      border-bottom-left-radius: 30px;
+      border-bottom-right-radius: 30px;
+    }
+  }
+
+  .logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+  }
+
+  .logo-img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--gold);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    transition: transform 0.3s;
+  }
+
+  @media (max-width: 768px) {
+    .logo-img {
+      width: 60px;
+      height: 60px;
+    }
+  }
+
+  .logo-img:hover {
+    transform: scale(1.05) rotate(3deg);
+  }
+
+  header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #ffe6c7, #ffd9a5);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  @media (max-width: 768px) {
+    header h1 {
+      font-size: 1.8rem;
+    }
+  }
+
+  header p {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #ffebd2;
+    margin-top: 8px;
+  }
+
+  /* Navigation */
+  nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    background: white;
+    padding: 0.8rem 1.5rem;
+    margin: 1.5rem auto;
+    width: fit-content;
+    max-width: 90%;
+    border-radius: 60px;
+    box-shadow: 0 12px 25px -10px rgba(94,62,42,0.15);
+  }
+
+  nav a {
+    color: #5e3e2a;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.5rem 1.2rem;
+    border-radius: 40px;
+    transition: all 0.3s;
+    font-size: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    nav a {
+      padding: 0.4rem 0.8rem;
+      font-size: 0.85rem;
+    }
+  }
+
+  nav a:hover {
+    background: var(--primary);
+    color: white;
+    transform: translateY(-2px);
+  }
+
+  /* Gallery Container */
+  .gallery-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem 24px;
+  }
+
+  @media (max-width: 768px) {
+    .gallery-container {
+      padding: 1.5rem 16px;
+    }
+  }
+
+  /* Page Title */
+  .page-title {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .page-title h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-dark);
+    margin-bottom: 0.5rem;
+  }
+
+  .page-title p {
+    font-size: 1.1rem;
+    color: #8b6b4d;
+  }
+
+  .page-title:after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 3px;
+    background: var(--gold);
+    margin: 15px auto 0;
+    border-radius: 3px;
+  }
+
+  @media (max-width: 768px) {
+    .page-title h2 {
+      font-size: 1.8rem;
+    }
+    .page-title p {
+      font-size: 0.9rem;
+    }
+  }
+
+  /* Category Tabs */
+  .category-tabs {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .tab-btn {
+    background: var(--cream);
+    border: 2px solid var(--primary-light);
+    padding: 10px 24px;
+    border-radius: 50px;
+    font-weight: 600;
+    color: var(--primary-dark);
+    cursor: pointer;
+    transition: all 0.3s;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.95rem;
+  }
+
+  .tab-btn.active {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+  }
+
+  .tab-btn:hover {
+    background: var(--primary-light);
+    color: white;
+    transform: translateY(-2px);
+  }
+
+  /* Gallery Grid - 3D Cards */
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 2rem;
+    perspective: 1000px;
+  }
+
+  @media (max-width: 768px) {
+    .gallery-grid {
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .gallery-grid {
+      grid-template-columns: 1fr;
+      gap: 1.2rem;
+    }
+  }
+
+  .gallery-card {
+    background: white;
+    border-radius: 28px;
+    overflow: hidden;
+    box-shadow: 0 15px 30px -12px rgba(0,0,0,0.15);
+    transform: translateZ(10px);
+    transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+    cursor: pointer;
+  }
+
+  .gallery-card:hover {
+    transform: translateY(-12px) translateZ(25px);
+    box-shadow: 0 30px 40px -15px rgba(94,62,42,0.35);
+  }
+
+  .image-wrapper {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 1/1;
+  }
+
+  .gallery-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+  }
+
+  .gallery-card:hover img {
+    transform: scale(1.08);
+  }
+
+  .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(94,62,42,0.9), transparent);
+    padding: 20px;
+    transform: translateY(100%);
+    transition: transform 0.4s ease;
+  }
+
+  .gallery-card:hover .overlay {
+    transform: translateY(0);
+  }
+
+  .overlay i {
+    color: var(--gold);
+    font-size: 1.2rem;
+    margin-right: 8px;
+  }
+
+  .overlay span {
+    color: white;
+    font-weight: 500;
+    font-size: 0.9rem;
+  }
+
+  .card-info {
+    padding: 1rem 1.2rem 1.2rem;
+    text-align: center;
+  }
+
+  .card-info h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--primary-dark);
+    margin-bottom: 5px;
+  }
+
+  .card-info p {
+    font-size: 0.85rem;
+    color: #a57a5a;
+  }
+
+  /* Back Button */
+  .back-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--primary);
+    color: white;
+    padding: 12px 28px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    transition: all 0.3s;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+
+  .back-button:hover {
+    background: var(--primary-dark);
+    transform: translateX(-5px);
+    box-shadow: 0 8px 20px rgba(94,62,42,0.3);
+  }
+
+  /* Modal for Lightbox */
+  .modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.9);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .modal.active {
+    display: flex;
+  }
+
+  .modal img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+  }
+
+  .modal-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+
+  .modal-close:hover {
+    transform: scale(1.1);
+  }
+
+  /* Footer */
+  footer {
+    background: linear-gradient(135deg, #3a2a1e, #2a1e14);
+    color: #ffebd2;
+    padding: 2rem;
+    border-radius: 45px 45px 0 0;
+    text-align: center;
+    margin-top: 3rem;
+  }
+
+  .copyright {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(212,175,55,0.3);
+    font-size: 0.9rem;
+  }
+
+  .copyright a {
+    color: var(--gold);
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .copyright a:hover {
+    color: white;
+    text-decoration: underline;
+  }
+
+  @media (max-width: 768px) {
+    footer {
+      padding: 1.5rem;
+    }
+    .copyright {
+      font-size: 0.8rem;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header>
+    <div class="logo-container">
+        <img src="IMG_3325.PNG" alt="Jeevi Glossy Glow Logo" class="logo-img" onerror="this.src='https://placehold.co/70x70/d4af37/5e3e2a?text=JGG'; this.onerror=null;">
+        <h1>Jeevi Glossy Glow 💄</h1>
+    </div>
+    <p>Mehendi Art Gallery | Traditional & Contemporary Designs</p>
+</header>
+
+<nav>
+    <a href="index.html"><i class="fas fa-home"></i> Home</a>
+    <a href="index.html#services"><i class="fas fa-brush"></i> Services</a>
+    <a href="index.html#booking"><i class="fas fa-calendar-alt"></i> Book Now</a>
+    <a href="index.html#contact"><i class="fas fa-phone-alt"></i> Contact</a>
+</nav>
+
+<div class="gallery-container">
+    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 1rem;">
+        <button onclick="goBack()" class="back-button">
+            <i class="fas fa-arrow-left"></i> Back to Home
+        </button>
+        <div style="font-size: 0.9rem; color: var(--primary);">
+            <i class="fas fa-hand-peace"></i> 15+ Mehendi Designs
+        </div>
+    </div>
+
+    <div class="page-title">
+        <h2>🌿 Mehendi Art Gallery 🌿</h2>
+        <p>Intricate henna designs • Arabic • Traditional • Bridal • Contemporary</p>
+    </div>
+
+    <!-- Category Tabs -->
+    <div class="category-tabs">
+        <button class="tab-btn active" onclick="filterGallery('all')">All Designs</button>
+        <button class="tab-btn" onclick="filterGallery('bridal')">Bridal Mehendi</button>
+        <button class="tab-btn" onclick="filterGallery('arabic')">Arabic Style</button>
+        <button class="tab-btn" onclick="filterGallery('traditional')">Traditional</button>
+        <button class="tab-btn" onclick="filterGallery('contemporary')">Contemporary</button>
+    </div>
+
+    <div class="gallery-grid" id="galleryGrid">
+        <!-- Bridal Mehendi Designs -->
+        <div class="gallery-card" data-category="bridal" onclick="openModal('https://placehold.co/600x600/c29a6b/ffffff?text=Bridal+Mehendi+👰')">
+            <div class="image-wrapper">
+                <img src="https://placehold.co/600x600/c29a6b/ffffff?text=Full+Bridal+Mehendi+👰" alt="Full Bridal Mehendi">
+                <div class="overlay">
+                    <i class="fas fa-expand"></i> <span>Click to enlarge</span>
+                </div>
+            </div>
+            <div class="card-info">
+                <h3>Full Bridal Mehendi</h3>
+                <p>Traditional motifs • Peacocks • Floral patterns</p>
+            </div>
+        </div>
+
+        <div class="gallery-card" data-category="bridal" onclick="openModal('https://placehold.co/600x600/b87a5c/ffffff?text=Royal+Bridal+Mehendi+👑')">
+            <div class="image-wrapper">
+                <img src="https://placehold.co/600x600/b87a5c/ffffff?text=Royal+Bridal+Mehendi+👑" alt="Royal Bridal Mehendi">
+                <div class="overlay">
+                    <i class="fas fa-expand"></i> <span>Click to enlarge</span>
+                </div>
+            </div>
+            <div class="card-info">
+                <h3>Royal Bridal Mehendi</h3>
+                <p>Dulhan special • Hidden names • Heavy detailing</p>
+            </div>
+        </div>
+
+        <!-- Arabic Style Mehendi -->
+        <div class="gallery-card" data-category="arabic" onclick="openModal('https://placehold.co/600x600/d4af8c/ffffff?text=Arabic+Mehendi+🌙')">
+            <div class="image-wrapper">
+                <img src="https://placehold.co/600x600/d4af8c/ffffff?text=Arabic+Mehendi+🌙" alt="Arabic Mehendi">
+                <div class="overlay">
+                    <i class="fas fa-expand"></i> <span>Click to enlarge</span>
+                </div>
+            </div>
+            <div class="card-info">
+                <h3>Arabic Mehendi</h3>
+                <p>Bold lines • Flowing vines • Modern elegance</p>
+            </div>
+        </div>
+
+        <div class="gallery-card" data-category="arabic" onclick="openModal('https://placehold.co/600x600/e6b8a2/ffffff?text=Moroccan+Mehendi+✨')">
+            <div class="image-wrapper">
+                <img src="https://placehold.co/600x600/e6b8a2/ffffff?text=Moroccan+Mehendi+✨" alt="Moroccan Mehendi">
+                <div class="overlay">
+                    <i class="fas fa-expand"></i> <span>Click to enlarge</span>
+                </div>
+            </div>
+            <div class="card-info">
+                <h3>Moroccan Style</h3>
+                <p>Geometric patterns • Moroccan influences</p>
+            </div>
+        </div>
+
+        <!-- Traditional Mehendi -->
+        <div class="gallery-card" data-category="traditional" onclick="openModal('https://placehold.co/600x600/a57c5c/ffffff?text=Traditional+Mehendi+🪔')">
+            <div class="image-wrapper">
+                <img src="https://placehold.co/600x600/a57c5c/ffffff?text=Traditional+Mehendi+🪔" alt="Traditional Mehendi">
+                <div class="overlay">
+                    <i class="fas fa-expand"></i> <span>Click to enlarge</span>
+                </div>
+            </div>
+            <div class="card-info">
+                <h3>Traditional Mehendi</h3>
+                <p>Rajasthani motifs • Paisley • Mandala art</p>
+            </div>
+        </div>
+
+        <div class="gallery-card" data-category="traditional" onclick="openModal('https://placehold.co/600x600/c28b6b/ffffff?text=South+Indian+Mehendi+🌺')">
+            <div class="image-wrapper">
+                <img src="https://placehold.co/600x600/c28b6b/ffffff?text=South+Indian+Mehendi+🌺" alt="South Indian Mehendi">
+                <div class="overlay">
+                    <i class="fas fa-expand"></i> <span>Click to enlarge</span>
+                </div>
+            </div>
+            <div class="card-info">
+                <h3>South Indian Mehendi</h3>
+                <p>Temple art • Kolam inspired designs</p>
+            </div>
+        </div>
+
+        <!-- Contemporary Mehendi -->
+        <div class="gallery-card" data-category="contemporary" onclick="openModal('https://placehold.co/600x600/d49c6f/ffffff?text=Minimalist+Mehendi+💫')">
+            <div class="image-wrapper">
+                <img src="https://placehold.co/600x600/d49c6f/ffffff?text=Minimalist+Mehendi+💫" alt="Minimalist Mehendi">
+                <div class="overlay">
+                    <i class="fas fa-expand"></i> <span>Click to enlarge</span>
+                </div>
+            </div>
+            <div class="card-info">
+                <h3>Minimalist Mehendi</h3>
+                <p>Simple elegant • Modern bride choice</p>
+            </div>
+        </div>
+
+        <div class="gallery-card" data-category="contemporary" onclick="openModal('https://placehold.co/600x600/e8c39e/ffffff?text=Fusion+Mehendi+🎨')">
+            <div class="image-wrapper">
+                <img src="https://placehold.co/600x600/e8c39e/ffffff?text=Fusion+Mehendi+🎨" alt="Fusion Mehendi">
+                <div class="overlay">
+                    <i class="fas fa-expand"></i> <span>Click to enlarge</span>
+                </div>
+            </div>
+            <div class="card-info">
+                <h3>Fusion Mehendi</h3>
+                <p>Mix of Arabic & Traditional styles</p>
+            </div>
+        </div>
+
+        <!-- More Designs -->
+        <div class="gallery-card" data-category="bridal" onclick="openModal('https://placehold.co/600x600/b88d6b/ffffff?text=Bridal+Backhand+✨')">
+            <div class="image-wrapper">
+                <img src="https://placehold.co/600x600/b88d6b/ffffff?text=Bridal+Backhand+✨" alt="Bridal Backhand">
+                <div class="overlay">
+                    <i class="fas fa-expand"></i> <span>Click to enlarge</span>
+                </div>
+            </div>
+            <div class="card-info">
+                <h3>Bridal Backhand</h3>
+                <p>Intricate backhand detailing</p>
+            </div>
+        </div>
+
+        <div class="gallery-card" data-category="arabic" onclick="openModal('https://placehold.co/600x600/c9a87c/ffffff?text=Leafy+Arabic+🍃')">
+            <div class="image-wrapper">
+                <img src="https://placehold.co/600x600/c9a87c/ffffff?text=Leafy+Arabic+🍃" alt="Leafy Arabic">
+                <div class="overlay">
+                    <i class="fas fa-expand"></i> <span>Click to enlarge</span>
+                </div>
+            </div>
+            <div class="card-info">
+                <h3>Leafy Arabic</h3>
+                <p>Vine patterns • Leaf motifs</p>
+            </div>
+        </div>
+
+        <div class="gallery-card" data-category="traditional" onclick="openModal('https://placehold.co/600x600/a88262/ffffff?text=Peacock+Mehendi+🦚')">
+            <div class="image-wrapper">
+                <img src="https://placehold.co/600x600/a88262/ffffff?text=Peacock+Mehendi+🦚" alt="Peacock Mehendi">
+                <div class="overlay">
+                    <i class="fas fa-expand"></i> <span>Click to enlarge</span>
+                </div>
+            </div>
+            <div class="card-info">
+                <h3>Peacock Mehendi</h3>
+                <p>Traditional peacock motifs</p>
+            </div>
+        </div>
+
+        <div class="gallery-card" data-category="contemporary" onclick="openModal('https://placehold.co/600x600/d2a87a/ffffff?text=Jewelry+Mehendi+💎')">
+            <div class="image-wrapper">
+                <img src="https://placehold.co/600x600/d2a87a/ffffff?text=Jewelry+Mehendi+💎" alt="Jewelry Mehendi">
+                <div class="overlay">
+                    <i class="fas fa-expand"></i> <span>Click to enlarge</span>
+                </div>
+            </div>
+            <div class="card-info">
+                <h3>Jewelry Mehendi</h3>
+                <p>Bracelet & ring patterns</p>
+            </div>
+        </div>
+
+        <div class="gallery-card" data-category="bridal" onclick="openModal('https://placehold.co/600x600/c49a6c/ffffff?text=Full+Arm+Mehendi+💫')">
+            <div class="image-wrapper">
+                <img src="https://placehold.co/600x600/c49a6c/ffffff?text=Full+Arm+Mehendi+💫" alt="Full Arm Mehendi">
+                <div class="overlay">
+                    <i class="fas fa-expand"></i> <span>Click to enlarge</span>
+                </div>
+            </div>
+            <div class="card-info">
+                <h3>Full Arm Mehendi</h3>
+                <p>Complete arm coverage design</p>
+            </div>
+        </div>
+
+        <div class="gallery-card" data-category="traditional" onclick="openModal('https://placehold.co/600x600/b3916e/ffffff?text=Mandala+Mehendi+🕉️')">
+            <div class="image-wrapper">
+                <img src="https://placehold.co/600x600/b3916e/ffffff?text=Mandala+Mehendi+🕉️" alt="Mandala Mehendi">
+                <div class="overlay">
+                    <i class="fas fa-expand"></i> <span>Click to enlarge</span>
+                </div>
+            </div>
+            <div class="card-info">
+                <h3>Mandala Mehendi</h3>
+                <p>Sacred mandala patterns</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Call to Action -->
+    <div style="text-align: center; margin: 3rem 0 2rem;">
+        <a href="index.html#booking" style="background: linear-gradient(95deg, var(--primary), var(--primary-dark)); color: white; padding: 14px 40px; border-radius: 60px; text-decoration: none; font-weight: 700; font-size: 1.1rem; display: inline-flex; align-items: center; gap: 10px; transition: all 0.3s;">
+            <i class="fab fa-whatsapp"></i> Book Your Mehendi Session
+        </a>
+        <p style="margin-top: 1rem; color: #8b6b4d;">✨ Custom mehendi designs • Organic henna • Free consultation ✨</p>
+    </div>
+</div>
+
+<!-- Modal for Lightbox -->
+<div id="imageModal" class="modal" onclick="closeModal()">
+    <span class="modal-close" onclick="closeModal()">&times;</span>
+    <img id="modalImage" src="" alt="Mehendi Art">
+</div>
+
+<footer>
+    <div class="footer-content">
+        <p><i class="fas fa-heart" style="color: var(--gold);"></i> Jeevi Glossy Glow — Traditional Mehendi Artistry</p>
+        <div class="copyright">
+            <p>© 2026 Jeevi Glossy Glow | All Rights Reserved</p>
+            <p>Designed & Developed by <a href="https://samtheodore.github.io/Sam-Portfolio/" target="_blank">TheoTech</a> <i class="fas fa-code"></i></p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Modal functionality
+    function openModal(imageSrc) {
+        const modal = document.getElementById('imageModal');
+        const modalImage = document.getElementById('modalImage');
+        modalImage.src = imageSrc;
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+        const modal = document.getElementById('imageModal');
+        modal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
+
+    // Close modal on escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            closeModal();
+        }
+    });
+
+    // Go back function
+    function goBack() {
+        window.location.href = 'index.html';
+    }
+
+    // Category filter function
+    function filterGallery(category) {
+        const cards = document.querySelectorAll('.gallery-card');
+        const tabs = document.querySelectorAll('.tab-btn');
+        
+        // Update active tab styling
+        tabs.forEach(tab => {
+            tab.classList.remove('active');
+            if (tab.innerText.toLowerCase().includes(category) || 
+                (category === 'all' && tab.innerText === 'All Designs')) {
+                tab.classList.add('active');
+            }
+        });
+        
+        // Filter cards
+        cards.forEach(card => {
+            if (category === 'all' || card.dataset.category === category) {
+                card.style.display = 'block';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    }
+
+    // Handle logo image error
+    const logoImg = document.querySelector('.logo-img');
+    if(logoImg) {
+        logoImg.addEventListener('error', function() {
+            this.src = 'https://placehold.co/70x70/d4af37/5e3e2a?text=JGG';
+        });
+    }
+
+    // Add 3D tilt effect on gallery cards
+    const cards = document.querySelectorAll('.gallery-card');
+    cards.forEach(card => {
+        card.addEventListener('mouseenter', function(e) {
+            if(window.innerWidth > 768) {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                const rotateX = (y - centerY) / 25;
+                const rotateY = (centerX - x) / 25;
+                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(30px)`;
+            }
+        });
+        card.addEventListener('mouseleave', function() {
+            card.style.transform = 'translateZ(10px)';
+        });
+    });
+</script>
+</body>
+</html>
